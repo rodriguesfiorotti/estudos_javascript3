@@ -1,0 +1,22 @@
+
+INTRODUÇÃO AO MÓDULO 3:
+
+O que vamos aprender 
+
+    Juntar as peças, combinando HTML, CSS e Javascript
+
+    Como criar comportamentos dinâmicos nas páginas web
+
+    O que é DOM e como manipulá-lo
+
+    Eventos
+
+    2 mini projetos práticos incríveis
+
+Ferramentas e Requisitos
+
+    VS Code e um Navegador web
+
+    CodePen (opcional)
+
+    HTML, CSS e Javascript

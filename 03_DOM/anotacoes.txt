@@ -1,0 +1,29 @@
+
+O que é o DOM
+
+Document Object Model, ou Modelo de Objeto de Documento
+
+Permite que um documento escrito em uma linguagem de marcação (HTML, XML, etc) seja acessado pelo javascript
+
+Isso é feito através de uma estrutura de árvore de objetos
+    Código:
+
+        HTML -> BODY -> H1
+                     -> H2
+                     -> H3
+
+Permite que tenhamos acesso direto a página HTML para manipulá-la de várias formas 
+
+    Lendo os elementos
+
+    Criando novos elementos 
+
+    Excluindo elementos 
+
+    Modificando elementos 
+
+    Modificando estilos
+
+    etc
+
+No navegador, podemos acessar o DOM através do objeto document

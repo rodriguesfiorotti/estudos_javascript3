@@ -1,0 +1,8 @@
+
+EVENTOS NO HTML:
+
+São uma forma dinâmica de executar javascript dentro de uma página HTML
+
+Permite executar o javascript sem travar o carregamento da página como vinhamos utilizando anteriormente
+
+São acionados por ações específicas na página (clicar, passar o mouse, focar, digitar e etc)
