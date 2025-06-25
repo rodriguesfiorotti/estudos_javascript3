@@ -16,7 +16,7 @@ function addPlayer() {
     const ul = document.createElement('ul')
 
     const h3 = document.createElement('h3')
-    h3.innerText = "Jogador " + (playersSection.childElementCount + 1)
+    h3.innerText = "Informações do Jogador"
 
     const playerPositionLi = document.createElement('li')
     playerPositionLi.innerText = "Posição: " + playerPositionField.value
