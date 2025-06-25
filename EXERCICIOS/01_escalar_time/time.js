@@ -25,7 +25,7 @@ function addPlayer() {
     playerNameLi.innerText = "Nome: " + playerNameField.value
 
     const playerNumberLi = document.createElement('li')
-    playerNumberLi.innerText = "Número: " + playerNumberField.value
+    playerNumberLi.innerText = "Número Camisa: " + playerNumberField.value
     
     ul.id = playerNumberField.value
     
