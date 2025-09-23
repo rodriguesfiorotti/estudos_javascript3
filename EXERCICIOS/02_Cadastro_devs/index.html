@@ -20,27 +20,10 @@
     <input type="text" name="devName" id="devName">
     <br><br>
 
-    <button>Adicionar Tecnologias</button>
+    <button type="button" id="addTecInfoBtn">Adicionar Tecnologias</button>
     <br><br>
 
-    <div id="tecRegisters" class="hide">
-        <label for="tecName">Nome Tecnologia:</label>
-        <br>
-        <input type="text" name="tecName" id="tecName">
-        <br><br>
-
-        <label for="experience">Tempo de Experiencia:</label>
-        <br>
-        <input type="radio" name="experience" id="experience1" value="Carne">
-        <label for="experience1">0 - 2 anos</label>
-        <br>
-        <input type="radio" name="experience" id="experience2" value="Frango">
-        <label for="experience2">3 - 4 anos</label>
-        <br>
-        <input type="radio" name="experience" id="experience3" value="Vegano">
-        <label for="experience3">5+ anos</label>
-        <br><br>
-    </div>
+    <div id="tecContainer"></div>
 
     <button type="submit">Salvar Dev</button>
   </form>
