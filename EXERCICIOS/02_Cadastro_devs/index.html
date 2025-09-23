@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trabalhando Com Formulários</title>
+  <script src="./index.js" defer></script>
+ <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+  <h1>Lista de Desenvolvedores</h1>
+  <hr>
+
+  <h2>Cadastrar Devs</h2>
+
+  <form id="devsForm">
+    <label for="devName">Nome Completo:</label>
+    <br>
+    <input type="text" name="devName" id="devName">
+    <br><br>
+
+    <button>Adicionar Tecnologias</button>
+    <br><br>
+
+    <div id="tecRegisters" class="hide">
+        <label for="tecName">Nome Tecnologia:</label>
+        <br>
+        <input type="text" name="tecName" id="tecName">
+        <br><br>
+
+        <label for="experience">Tempo de Experiencia:</label>
+        <br>
+        <input type="radio" name="experience" id="experience1" value="Carne">
+        <label for="experience1">0 - 2 anos</label>
+        <br>
+        <input type="radio" name="experience" id="experience2" value="Frango">
+        <label for="experience2">3 - 4 anos</label>
+        <br>
+        <input type="radio" name="experience" id="experience3" value="Vegano">
+        <label for="experience3">5+ anos</label>
+        <br><br>
+    </div>
+
+    <button type="submit">Salvar Dev</button>
+  </form>
+</body>
+</html>
