@@ -57,25 +57,36 @@ addTecInfoBtn.addEventListener("click", () => {
 })
 
 form.addEventListener("submit", function (ev) {
-  ev.preventDefault()
+  ev.preventDefault();
 
-  const devName = document.getElementById("devName").value
+  const devName = document.getElementById("devName").value;
 
-  // Pegar todas as tecnologias adicionadas
-  const tecDivs = document.querySelectorAll(".tecRegistersDiv")
-  let tecs = []
+  const tecDivs = document.querySelectorAll(".tecRegistersDiv");
+  let tecs = [];
 
   tecDivs.forEach(div => {
-    const tecName = div.querySelector("input[type='text']").value
-    const experience = div.querySelector("input[type='radio']:checked")?.value
-    tecs.push({ tecName, experience })
-  })
+    const tecName = div.querySelector("input[type='text']").value;
+    const experience = div.querySelector("input[type='radio']:checked")?.value;
+    tecs.push({ tecName, experience });
+  });
 
-  console.log({ devName, tecs })
-
+  // Mostrar alerta
   alert(
     "Dev Cadastrado com Sucesso!!" +
     "\nNome do Dev: " + devName +
     "\nTecnologias: " + JSON.stringify(tecs, null, 2)
-  )
-})
+  );
+
+  // Criar o item na lista
+  const ListInfoDiv = document.getElementById("devList");
+  const ListInfo = document.createElement("p");
+  ListInfo.innerText = devName + " - Tecnologias: " +
+    tecs.map(t => `${t.tecName} (${t.experience || "sem experiência"})`).join(", ");
+
+  ListInfoDiv.appendChild(ListInfo); // <-- aqui
+
+  // limpar form
+  document.getElementById("devName").value = "";
+  document.getElementById("tecContainer").innerHTML = "";
+});
+
