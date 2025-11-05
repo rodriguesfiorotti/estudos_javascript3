@@ -1,22 +1,28 @@
 const form = document.getElementById("devsForm")
 let addTecInfoBtn = document.getElementById("addTecInfoBtn")
 let tecContainer = document.getElementById("tecContainer")
+const devs = []
 
 addTecInfoBtn.addEventListener("click", () => {
-  // Criar um wrapper para cada tecnologia
   const newTecDiv = document.createElement("div")
   newTecDiv.classList.add("tecRegistersDiv")
   
-  // Criar campo de nome da tecnologia
   const labelTec = document.createElement("label")
   labelTec.innerText = "Nome Tecnologia:"
+
   const inputTec = document.createElement("input")
   inputTec.type = "text"
   inputTec.name = "tecName"
 
-  // Criar campos de experiência
   const labelExp = document.createElement("label")
   labelExp.innerText = "Tempo de Experiência:"
+
+  const btnDeleteTecFields = document.createElement("button")
+  btnDeleteTecFields.textContent = "Remover"
+  btnDeleteTecFields.type = "button"
+  btnDeleteTecFields.addEventListener("click", function () {
+    this.parentElement.remove()
+  })
 
   const expOptions = [
     { value: "0 - 2 anos", text: "0 - 2 anos" },
@@ -24,10 +30,10 @@ addTecInfoBtn.addEventListener("click", () => {
     { value: "5+ anos", text: "5+ anos" }
   ]
 
-  const radios = expOptions.map((opt, index) => {
+  const radios = expOptions.map((opt) => {
     const radio = document.createElement("input")
     radio.type = "radio"
-    radio.name = "experience-" + Date.now() // nome único por tecnologia
+    radio.name = "experience-" + Date.now()
     radio.value = opt.value
 
     const label = document.createElement("label")
@@ -36,7 +42,6 @@ addTecInfoBtn.addEventListener("click", () => {
     return [radio, label, document.createElement("br")]
   })
 
-  // Montar a estrutura no DOM
   newTecDiv.appendChild(labelTec)
   newTecDiv.appendChild(document.createElement("br"))
   newTecDiv.appendChild(inputTec)
@@ -51,6 +56,7 @@ addTecInfoBtn.addEventListener("click", () => {
     newTecDiv.appendChild(br)
   })
 
+  newTecDiv.appendChild(btnDeleteTecFields)
   newTecDiv.appendChild(document.createElement("br"))
 
   tecContainer.appendChild(newTecDiv)
@@ -70,23 +76,25 @@ form.addEventListener("submit", function (ev) {
     tecs.push({ tecName, experience });
   });
 
-  // Mostrar alerta
-  alert(
-    "Dev Cadastrado com Sucesso!!" +
-    "\nNome do Dev: " + devName +
-    "\nTecnologias: " + JSON.stringify(tecs, null, 2)
-  );
+  // Salvar no array
+  const newDev = {
+    name: devName,
+    technologies: tecs
+  }
 
-  // Criar o item na lista
-  const ListInfoDiv = document.getElementById("devList");
-  const ListInfo = document.createElement("p");
+  devs.push(newDev)
+
+  console.log("DEV CADASTRADOS:", devs)
+
+  alert("Dev cadastrado com sucesso!")
+
+  const ListInfoDiv = document.getElementById("devList")
+  const ListInfo = document.createElement("p")
   ListInfo.innerText = devName + " - Tecnologias: " +
-    tecs.map(t => `${t.tecName} (${t.experience || "sem experiência"})`).join(", ");
+    tecs.map(t => `${t.tecName} (${t.experience || "sem experiência"})`).join(", ")
 
-  ListInfoDiv.appendChild(ListInfo); // <-- aqui
+  ListInfoDiv.appendChild(ListInfo)
 
-  // limpar form
-  document.getElementById("devName").value = "";
-  document.getElementById("tecContainer").innerHTML = "";
-});
-
+  document.getElementById("devName").value = ""
+  tecContainer.innerHTML = ""
+})
