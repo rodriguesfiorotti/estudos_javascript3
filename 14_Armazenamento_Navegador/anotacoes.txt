@@ -1,0 +1,25 @@
+
+Armazenamento do Navegador
+
+Session Storage 
+    Forma simples de armazenar dados no navegador durante a navegação.
+
+    Persistem mesmo após mudar de página em um mesmo site enquanto a aba/janela estiver aberta
+
+    Existem somente enquanto a aba daquele site está aberta, ao fechar o sessionStorage é limpo
+
+
+Local Storage
+    Dados armazenados no navegador que persistem mesmo após fechar a aba/janela do navegador
+
+    Existem "para sempre" até serem removidos, não possuem data de expiração
+
+
+Cookies
+    Dados armazenados em pequenos arquivos de texto no computador do cliente
+
+    Podem possuir data de expiração
+
+    A forma mais tradicional de permitir "lembrar" de informações mesmo depois de fechar o navegador
+    
+    São enviados nas requisições e podem existir no servidor, sendo devolvidos quando uma página html for solicitada
